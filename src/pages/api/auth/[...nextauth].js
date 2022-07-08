@@ -12,17 +12,13 @@ const {google} = require('googleapis')
 const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_ID, 
     process.env.GOOGLE_SECRET,
-    'https://d-boardtest.vercel.app'
+    'https://developers.google.com/oauthplayground'
 )
  oauth2Client.setCredentials({
     refresh_token:process.env.GOOGLE_REFRESH_TOKEN
 })
-const accessToken = new Promise((resolve, reject) => {
-    oauth2Client.getAccessToken((err, token) => {
-        if(err) reject(err)
-        resolve(token)
-    })
-})
+const accessToken = oauth2Client.getAccessToken();
+
 // const OAuth2_client = new OAuth(process.env.GOOGLE_ID, process.env.GOOGLE_SECRET)
 // const token = OAuth2_client.setCredentials({refreshToken: process.env.GOOGLE_REFRESH_TOKEN})
 // // Email sender
