@@ -195,7 +195,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
 
                   {!showSignIn ? (
                     <Dialog.Description className="mt-2 text-gray-500 text-base text-center">
-                      Please create an account to begin finding whatever you want!!
+                      Please create an account to begin finding whatever you want!!1
                     </Dialog.Description>
                   ) : null}
 

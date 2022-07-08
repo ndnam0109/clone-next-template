@@ -17,13 +17,16 @@ const oauth2Client = new google.auth.OAuth2(
  oauth2Client.setCredentials({
     refresh_token:process.env.GOOGLE_REFRESH_TOKEN
 })
-const accessToken = oauth2Client.getAccessToken();
+
+const accessToken =  oauth2Client.getAccessToken();
 
 // const OAuth2_client = new OAuth(process.env.GOOGLE_ID, process.env.GOOGLE_SECRET)
 // const token = OAuth2_client.setCredentials({refreshToken: process.env.GOOGLE_REFRESH_TOKEN})
 // // Email sender
 // const accessToken = OAuth2_client.getAccessToken()
+
 const transporter = nodemailer.createTransport({
+    
 //   host: process.env.EMAIL_SERVER_HOST,
 //   port: process.env.EMAIL_SERVER_PORT,
 //   secure: true,
@@ -34,8 +37,8 @@ const transporter = nodemailer.createTransport({
 //   secure: true,
 service: 'gmail',
 host: process.env.EMAIL_SERVER_HOST,
-port: 587,//465,
-secure: false,
+port: 465,
+secure: true,
 auth: {
     type: 'OAuth2',
     user: 'justbrenn2@gmail.com',
@@ -46,6 +49,7 @@ auth: {
 
 }
 });
+
 
 const emailsDir = path.resolve(process.cwd(), 'emails');
 
