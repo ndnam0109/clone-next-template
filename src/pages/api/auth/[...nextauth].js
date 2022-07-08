@@ -9,7 +9,7 @@ import { readFileSync } from 'fs';
 import path from 'path';
 
 // Email sender
-const transporter = nodemailer.createTransport("SMTP",{
+const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_SERVER_HOST,
   port: process.env.EMAIL_SERVER_PORT,
   secure: true,
