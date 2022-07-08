@@ -45,7 +45,7 @@ const Confirm = ({ show = false, email = '' }) => (
           <div className="overflow-hidden transition-all transform">
             <h3 className="text-center text-lg font-medium leading-6">
               <div className="flex flex-col justify-center items-center space-y-4">
-                <MailOpenIcon className="w-12 h-12 shrink-0 text-rose-500" />
+                <MailOpenIcon className="w-12 h-12 shrink-0 text-[#f4911e]" />
               </div>
               <p className="text-2xl font-semibold mt-2">Confirm your email</p>
             </h3>
@@ -177,7 +177,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                   <div className="flex justify-center">
                     <Link href="/">
                       <a className="flex items-center space-x-1">
-                        {/* <SparklesIcon className="shrink-0 w-8 h-8 text-rose-500" /> */}
+    
                         <img src="\images\surpluslist\surpluslistlogo.png" alt="" className="h-8"/>
                         <span className="text-xl font-semibold tracking-wide">
                           Surplus<span className="text-[#f4911e]">List</span>
@@ -195,7 +195,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
 
                   {!showSignIn ? (
                     <Dialog.Description className="mt-2 text-gray-500 text-base text-center">
-                      Please create an account to begin your Surplus Fund journey
+                      Please create an account to begin finding whatever you want!
                     </Dialog.Description>
                   ) : null}
 
@@ -235,7 +235,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                           <button
                             type="submit"
                             disabled={disabled || !isValid}
-                            className="mt-6 w-full bg-[#f4911e] text-white py-2 px-8 rounded-md focus:outline-none focus:ring-4 focus:ring-rose-600 focus:ring-opacity-50 hover:bg-gray-600 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-600"
+                            className="mt-6 w-full bg-[#f4911e] text-white py-2 px-8 rounded-md focus:outline-none focus:ring-4 focus:ring-[#464646] focus:ring-opacity-50 hover:bg-gray-600 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#464646]"
                           >
                             {isSubmitting
                               ? 'Loading...'
@@ -253,7 +253,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                                     setShowSignIn(false);
                                     resetForm();
                                   }}
-                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-rose-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-[#464646] disabled:hover:text-[#464646] disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                   Sign up
                                 </button>
@@ -269,7 +269,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                                     setShowSignIn(true);
                                     resetForm();
                                   }}
-                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-gray-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-gray-600 disabled:hover:text-[#464646] disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                   Log in
                                 </button>
