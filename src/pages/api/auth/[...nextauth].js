@@ -7,17 +7,47 @@ import nodemailer from 'nodemailer';
 import Handlebars from 'handlebars';
 import { readFileSync } from 'fs';
 import path from 'path';
+const {google} = require('googleapis')
 
-// Email sender
+const oauth2Client = new google.auth.OAuth2(
+    process.env.GOOGLE_ID, 
+    process.env.GOOGLE_SECRET,
+    'http://localhost:3000'
+)
+ oauth2Client.setCredentials({
+    refresh_token:process.env.GOOGLE_REFRESH_TOKEN
+})
+const accessToken = new Promise((resolve, reject) => {
+    oauth2Client.getAccessToken((err, token) => {
+        if(err) reject(err)
+        resolve(token)
+    })
+})
+// const OAuth2_client = new OAuth(process.env.GOOGLE_ID, process.env.GOOGLE_SECRET)
+// const token = OAuth2_client.setCredentials({refreshToken: process.env.GOOGLE_REFRESH_TOKEN})
+// // Email sender
+// const accessToken = OAuth2_client.getAccessToken()
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_SERVER_HOST,
-  port: process.env.EMAIL_SERVER_PORT,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_SERVER_USER,
-    pass: process.env.EMAIL_SERVER_PASSWORD,
-  },
-  secure: true,
+//   host: process.env.EMAIL_SERVER_HOST,
+//   port: process.env.EMAIL_SERVER_PORT,
+//   secure: true,
+//   auth: {
+//     user: process.env.EMAIL_SERVER_USER,
+//     pass: process.env.EMAIL_SERVER_PASSWORD,
+//   },
+//   secure: true,
+service: 'gmail',
+host: process.env.EMAIL_SERVER_HOST,
+port: 465,
+auth: {
+    type: 'OAuth2',
+    user: 'justbrenn2@gmail.com',
+    clientId: process.env.GOOGLE_ID,
+    accessToken,
+    clientSecret:process.env.GOOGLE_SECRET,
+    refreshToken: process.env.GOOGLE_REFRESH_TOKEN
+
+}
 });
 
 const emailsDir = path.resolve(process.cwd(), 'emails');

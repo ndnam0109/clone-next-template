@@ -47,6 +47,7 @@
     "faker": "^5.5.3",
     "formik": "^2.2.9",
     "fs": "^0.0.1-security",
+    "googleapis": "^105.0.0",
     "handlebars": "^4.7.7",
     "moment": "^2.29.3",
     "next": "12.1.6",
