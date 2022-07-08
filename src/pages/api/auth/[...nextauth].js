@@ -56,7 +56,7 @@ const sendWelcomeEmail = async ({ user }) => {
       }),
     });
   } catch (error) {
-    console.log(`❌ Unable to send welcome email to user (${email})`);
+    // console.log(`❌ Unable to send welcome email to user (${email})`);
   }
 };
 

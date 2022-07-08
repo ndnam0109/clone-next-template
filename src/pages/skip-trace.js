@@ -7,15 +7,15 @@ import { Input } from "components/forms/input";
 import { Hint } from "components/forms/hint";
 
 export default function Skiptracename() {
-  const [ididata, setididata] = useState(null);
-  const [apiConnection, setapiConnection] = useState(null)
-  useEffect(() => {
-    console.log('running')
+  const [ididata, setididata] = useState('hello');
+  const [apiConnection, setapiConnection] = useState('hello')
+  // useEffect(() => {
+  //   console.log('running')
   
-    return () => {
+  //   return () => {
       
-    }
-  }, [])
+  //   }
+  // }, [])
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -266,7 +266,7 @@ export default function Skiptracename() {
           </InputWrapper>
       <div style={{ padding: "10px" }}>
         <div style={{ paddingBottom: "10px", textDecoration: "underline" }}>
-          Skip Trace Name Testing for user 
+          Skip Trace Name Testing for new application
         </div>
         <button
           onClick={Name}

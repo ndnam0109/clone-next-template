@@ -4,7 +4,7 @@ import { getSession } from 'next-auth/react';
 export default async function handler(req, res) {
     const session = await getSession({ req });
     if (!session) {
-      return res.status(401).json({ message: 'Unauthorized.' });
+      return res.status(401).json({ message: 'Unauthorized user.' });
     }
     const {firstName, lastName, address, city, state} = req.body
     const user = await prisma.user.findUnique({
