@@ -65,7 +65,7 @@ const Apps: React.FC = () => {
         {items.map((item, i) => (
           <div
             key={i}
-            className="flex flex-col items-center justify-center w-1/3 h-20 text-gray-900 bg-white space-y-1 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            className="flex flex-col items-center justify-center w-1/3 h-20 text-gray-900 bg-white space-y-1 dark:bg-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
             {item.icon}
             <span className="text-xs">{item.title}</span>
           </div>

@@ -44,8 +44,8 @@ const initialState: NavigationState[] = [
         title: "Apps",
         items: [
           {
-            url: "/social-feed",
-            title: "Social feed",
+            url: "/skip-trace",
+            title: "Skip Trace",
             items: [],
           },
           {

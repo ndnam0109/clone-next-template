@@ -12,8 +12,8 @@ const Logo: React.FC = () => {
       <div className="logo truncate">
         <Link href="/">
           <a className="flex flex-row items-center justify-start space-x-2">
-            <FiBox size={28} />
-            <span>{name}</span>
+            <img src="\images\surpluslist\surpluslistlogo.png" alt="" className="h-8"/>
+            <span className="text-[#464646] dark:text-white">{name}</span>
           </a>
         </Link>
         <button

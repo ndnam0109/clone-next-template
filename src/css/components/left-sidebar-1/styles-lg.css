@@ -64,7 +64,7 @@
       }
     }
     &.open-sibling {
-      @apply text-blue-500;
+      @apply text-[#f4911e];
       &:after {
         content: "";
         display: block;
@@ -73,7 +73,7 @@
         bottom: 0;
         left: 0;
         width: 4px;
-        @apply bg-blue-500;
+        @apply bg-[#f4911e];
       }
     }
     &:after {
@@ -84,11 +84,12 @@
       bottom: 0;
       left: 0;
       width: 4px;
-      @apply bg-blue-500;
+      @apply bg-[#f4911e]; 
+      /* the above changes the color of the bar in the navigation */
     }
     &:hover,
     &.active {
-      @apply text-blue-500;
+      @apply text-[#f4ae1e];
       &:after {
         display: block;
       }

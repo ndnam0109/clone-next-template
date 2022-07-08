@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SkipTraceAddress {
+  id           String    @id @default(cuid())
+  pid          String?
+  data         String?
+  streetNumber String?
+  street       String?
+  streetSuffix String?
+  city         String?
+  state        String?
+  zip          String?
+  zip4         String?
+  dateRange    String?
+  county       String?
+  latitude     Float?
+  longitude    Float?
+  ownership    String?
+  created_at   DateTime? @default(now()) @db.Timestamptz(6)
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
+}
+
+model SkipTraceDob {
+  id         String    @id @default(cuid())
+  pid        String?
+  dob        String?
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  user       User      @relation(fields: [userId], references: [id])
+  userId     String
+}
+
+model SkipTraceEmail {
+  id           String    @id @default(cuid())
+  pid          String?
+  emailaddress String?
+  firstseen    BigInt?
+  lastseen     BigInt?
+  created_at   DateTime? @default(now()) @db.Timestamptz(6)
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
+}
+
+model SkipTraceName {
+  id         String    @id @default(cuid())
+  pid        String?
+  first      String?
+  last       String?
+  middle     String?
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  user       User      @relation(fields: [userId], references: [id])
+  userId     String
+}
+
+model SkipTracePhone {
+  id           String    @id @default(cuid())
+  pid          String?
+  type         String?
+  number       String?
+  providername String?
+  firstseen    BigInt?
+  lastseen     BigInt?
+  created_at   DateTime? @default(now()) @db.Timestamptz(6)
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
+}
+
+model SkipTraceRelationship {
+  id                String    @id @default(cuid())
+  parentpid         String?
+  pid               String?
+  first             String?
+  last              String?
+  type              String?
+  subtype           String?
+  dob               String?
+  rank              BigInt?
+  phonenumber       String?
+  phonetype         String?
+  phoneprovidername String?
+  phonefirstseen    BigInt?
+  phonelastseen     BigInt?
+  created_at        DateTime? @default(now()) @db.Timestamptz(6)
+  user              User      @relation(fields: [userId], references: [id])
+  userId            String
+}
+
+model UserSearch {
+  id         String    @id @default(cuid())
+  firstName  String?   @db.VarChar
+  lastName   String?
+  address    String?
+  city       String?
+  state      String?
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  user       User      @relation(fields: [userId], references: [id])
+  userId     String
+}
+
+model idiCoreToken {
+  id         String    @id @default(cuid())
+  token      String?   @db.VarChar
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String                  @id @default(cuid())
+  name          String?
+  email         String?                 @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  searchUser    UserSearch[]
+  addressUser   SkipTraceAddress[]
+  dobUser       SkipTraceDob[]
+  emailUser     SkipTraceEmail[]
+  nameUser      SkipTraceName[]
+  relationUser  SkipTraceRelationship[]
+  phoneUser     SkipTracePhone[]
+
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

@@ -19,7 +19,7 @@
     .logo {
       @apply flex flex-row items-center justify-start w-full h-16 pl-4 text-base font-bold tracking-wider uppercase whitespace-nowrap;
       max-width: calc(theme("spacing.1") * 64);
-      @apply text-blue-500;
+      @apply text-orange-500;
       span {
         @apply block;
       }
@@ -35,7 +35,7 @@
       width: calc(theme("spacing.1") * 16);
     }
     &.open-sibling {
-      @apply text-blue-500;
+      @apply text-orange-500;
       &:after {
         content: "";
         display: block;

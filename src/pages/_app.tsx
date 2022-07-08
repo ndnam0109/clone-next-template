@@ -16,12 +16,13 @@ import "css/components/nprogress.css";
 import "css/components/recharts.css";
 import "css/components/steps.css";
 import "css/components/left-sidebar-3.css";
+import {SessionProvider as AuthProvider} from 'next-auth/react'
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-function App({Component, pageProps}: AppProps): React.ReactElement {
+function App({Component, pageProps: {session, ...pageProps}}: AppProps): React.ReactElement {
   return (
     <>
       <Head>
@@ -30,11 +31,17 @@ function App({Component, pageProps}: AppProps): React.ReactElement {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
+
       <Provider store={store}>
+
         <Layout>
-          <Component {...pageProps} />
+        <AuthProvider session={session} >
+          <Component {...pageProps} />        
+          </AuthProvider>
         </Layout>
+
       </Provider>
+
     </>
   );
 }

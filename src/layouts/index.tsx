@@ -48,6 +48,7 @@ const Layouts: React.FC<LayoutProps> = ({children}) => {
     case "/login-1":
     case "/contact-us-1":
     case "/create-account":
+    case "/signup":
     case "/email-confirmation":
     case "/logout":
     case "/reset-password":

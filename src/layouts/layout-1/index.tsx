@@ -15,7 +15,7 @@ const Layout1: React.FC<Layout1Props> = ({children}) => {
   return (
     <>
       <Head>
-        <title>D-board</title>
+        <title>Surplus List</title>
       </Head>
       <div
         data-layout={layout}

@@ -1,5 +1,5 @@
 import SectionTitle from "components/section-title";
-import Widget from "components/social-feed/widget";
+import Widget from "components/skip-trace/widget";
 import Tasks from "components/tasks";
 import tasks from "json/tasks.json";
 

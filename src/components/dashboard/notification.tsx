@@ -18,7 +18,7 @@ const Index: React.FC = () => {
     position: "fixed z-50 top-0 right-0",
     padding: "p-2",
     fullWidth: false,
-    notificationClassNames: "bg-blue-500 text-white rounded shadow",
+    notificationClassNames: "bg-[#f4911e] text-white rounded shadow",
     notificationIcon: <FiAlertCircle className="w-4 h-4 mr-2 stroke-current" />,
     notificationContent: <span>Press CTRL+I to toggle dark mode</span>,
   };

@@ -13,14 +13,14 @@ const Index: React.FC = () => {
         <span className="mr-1">Already have an account?</span>
         <span>
           <Link href="/login">
-            <a className="text-blue-500">Login here</a>
+            <a className="text-[#f4911e]">Login here</a>
           </Link>
         </span>
       </div>
       <div className="w-full">
         <span>
           <Link href="/forgot-password">
-            <a className="text-blue-500">Forgot password?</a>
+            <a className="text-[#f4911e]">Forgot password?</a>
           </Link>
         </span>
       </div>

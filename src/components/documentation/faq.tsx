@@ -59,7 +59,7 @@ export const Customization: React.FC = () => {
       question: "Where can I find the colors available in the template?",
       answer: (
         <div>
-          <b>D-board</b> uses the default <code>tailwind</code> color palette.
+          <b>Surplus List</b> uses the default <code>tailwind</code> color palette.
           Full list can be found in this{" "}
           <a
             href="https://tailwindcss.com/docs/customizing-colors"
