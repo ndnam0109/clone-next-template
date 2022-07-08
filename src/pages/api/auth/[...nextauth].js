@@ -12,7 +12,7 @@ const {google} = require('googleapis')
 const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_ID, 
     process.env.GOOGLE_SECRET,
-    'http://localhost:3000'
+    'https://d-boardtest.vercel.app'
 )
  oauth2Client.setCredentials({
     refresh_token:process.env.GOOGLE_REFRESH_TOKEN

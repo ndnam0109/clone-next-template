@@ -177,9 +177,10 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                   <div className="flex justify-center">
                     <Link href="/">
                       <a className="flex items-center space-x-1">
-                        <SparklesIcon className="shrink-0 w-8 h-8 text-rose-500" />
+                        {/* <SparklesIcon className="shrink-0 w-8 h-8 text-rose-500" /> */}
+                        <img src="\images\surpluslist\surpluslistlogo.png" alt="" className="h-8"/>
                         <span className="text-xl font-semibold tracking-wide">
-                          Supa<span className="text-rose-500">Vacation</span>
+                          Surplus<span className="text-[#f4911e]">List</span>
                         </span>
                       </a>
                     </Link>
@@ -194,8 +195,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
 
                   {!showSignIn ? (
                     <Dialog.Description className="mt-2 text-gray-500 text-base text-center">
-                      Please create an account to list your homes and bookmark
-                      your favorite ones.
+                      Please create an account to begin your Surplus Fund journey
                     </Dialog.Description>
                   ) : null}
 
@@ -207,7 +207,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                       className="h-[46px] w-full mx-auto border rounded-md p-2 flex justify-center items-center space-x-2 text-gray-500 hover:text-gray-600 hover:border-gray-400 hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:text-gray-500 disabled:hover:bg-transparent disabled:hover:border-gray-200 transition-colors"
                     >
                       <Image
-                        src="/google.svg"
+                        src="/images/surpluslist/google.svg"
                         alt="Google"
                         width={32}
                         height={32}
@@ -235,7 +235,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                           <button
                             type="submit"
                             disabled={disabled || !isValid}
-                            className="mt-6 w-full bg-rose-600 text-white py-2 px-8 rounded-md focus:outline-none focus:ring-4 focus:ring-rose-600 focus:ring-opacity-50 hover:bg-rose-500 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-600"
+                            className="mt-6 w-full bg-[#f4911e] text-white py-2 px-8 rounded-md focus:outline-none focus:ring-4 focus:ring-rose-600 focus:ring-opacity-50 hover:bg-gray-600 transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-600"
                           >
                             {isSubmitting
                               ? 'Loading...'
@@ -253,7 +253,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                                     setShowSignIn(false);
                                     resetForm();
                                   }}
-                                  className="underline underline-offset-1 font-semibold text-rose-500 hover:text-rose-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-rose-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                   Sign up
                                 </button>
@@ -269,7 +269,7 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
                                     setShowSignIn(true);
                                     resetForm();
                                   }}
-                                  className="underline underline-offset-1 font-semibold text-rose-500 hover:text-rose-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                                  className="underline underline-offset-1 font-semibold text-[#f4911e] hover:text-gray-600 disabled:hover:text-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                   Log in
                                 </button>
