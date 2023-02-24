@@ -14,7 +14,7 @@
       }
       &.left-sidebar-item {
         .arrow {
-          transform: rotate(-90deg) !important;
+          transform: rotate(-90deg)
         }
       }
     }
@@ -84,7 +84,7 @@
       bottom: 0;
       left: 0;
       width: 4px;
-      @apply bg-[#f4911e]; 
+      @apply bg-[#f4911e];
       /* the above changes the color of the bar in the navigation */
     }
     &:hover,
@@ -175,7 +175,7 @@
   .left-sidebar-1 {
     @apply text-sm;
     .badge {
-      @apply hidden !important;
+      @apply hidden
     }
     [data-collapsed="true"][data-background="light"] & {
       ul > li {

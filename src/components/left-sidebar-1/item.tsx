@@ -43,7 +43,7 @@ const Item: React.FC<NavigationState> = ({url, icon, title, badge, items}) => {
           {badge.text}
         </span>
       )}
-      <FiChevronRight className="ml-auto arrow" />
+      {/*<FiChevronRight className="ml-auto arrow" />*/}
     </button>
   );
 };

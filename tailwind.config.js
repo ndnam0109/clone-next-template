@@ -17,6 +17,9 @@ module.exports = {
         purple: colors.violet,
         gray: colors.neutral,
       },
+      gridTemplateRows: {
+        header: "64px auto", //for the navbar layout
+      },
     },
   },
   plugins: [

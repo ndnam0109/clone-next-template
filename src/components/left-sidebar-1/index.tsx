@@ -7,7 +7,7 @@ import Logo from "components/left-sidebar-1/logo";
 const LeftSidebar: React.FC = () => {
   const navigation = useAppSelector((state) => state.navigation);
   return (
-    <div className="text-gray-900 bg-white border-r border-gray-100 left-sidebar left-sidebar-1 dark:bg-gray-900 dark:border-gray-800 dark:text-white">
+    <div className="text-gray-900 h-[calc(100vh_-_64px)] top-16 sticky bg-white  border-r border-gray-100 left-sidebar left-sidebar-1 overflow-y-scroll">
       <Logo />
       {navigation.map((menu, i) => (
         <Fragment key={i}>

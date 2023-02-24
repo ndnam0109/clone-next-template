@@ -23,9 +23,9 @@
   [data-layout="layout-1"] {
     width: 100%;
     .wrapper {
-      @apply flex flex-row items-stretch;
+      //@apply flex flex-row items-stretch;
       .left-sidebar {
-        @apply w-full;
+        @apply w-full ;
         min-width: calc(theme("spacing.1") * 16);
         max-width: calc(theme("spacing.1") * 64);
         transition: max-width 0.25s ease-in-out;

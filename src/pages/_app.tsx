@@ -7,22 +7,18 @@ import Router from "next/router";
 import NProgress from "nprogress";
 import "css/tailwind.css";
 import "css/main.css";
-import "css/layouts/layout-1.css";
+import "css/layouts/layout-1.scss";
 import "css/layouts/e-commerce.css";
 import "css/animate.css";
-import "css/components/left-sidebar-1/styles-lg.css";
+import "css/components/left-sidebar-1/styles-lg.scss";
 import "css/components/left-sidebar-1/styles-sm.css";
 import "css/components/nprogress.css";
 import "css/components/recharts.css";
 import "css/components/steps.css";
 import "css/components/left-sidebar-3.css";
-import {SessionProvider as AuthProvider} from 'next-auth/react'
 
-Router.events.on("routeChangeStart", () => NProgress.start());
-Router.events.on("routeChangeComplete", () => NProgress.done());
-Router.events.on("routeChangeError", () => NProgress.done());
 
-function App({Component, pageProps: {session, ...pageProps}}: AppProps): React.ReactElement {
+function App({Component, pageProps: { ...pageProps}}: AppProps): React.ReactElement {
   return (
     <>
       <Head>
@@ -35,9 +31,7 @@ function App({Component, pageProps: {session, ...pageProps}}: AppProps): React.R
       <Provider store={store}>
 
         <Layout>
-        <AuthProvider session={session} >
-          <Component {...pageProps} />        
-          </AuthProvider>
+          <Component {...pageProps} />
         </Layout>
 
       </Provider>
